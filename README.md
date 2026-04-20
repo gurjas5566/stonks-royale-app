@@ -1,50 +1,46 @@
-# Welcome to your Expo app 👋
+# Stonks Royale  
+### Real-Time Gamified Trading Simulator  
+**Built with MERN Stack & React Native (Expo)**
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Stonks Royale is a mobile-first trading simulator that blends financial education with competitive gameplay. It features a live market engine, modern glassmorphic UI, and a progression system driven by trading performance.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Key Features
 
-   ```bash
-   npm install
-   ```
+### ⚡ Real-Time Market  
+- Live price updates every 2 seconds using WebSockets (Socket.io)  
+- Powered by a Gaussian random walk algorithm  
 
-2. Start the app
+### 🏆 Progression System  
+- Earn XP for profitable trades  
+- Level up from Beginner 🐥 to Whale 🐳  
+- Compete on a global leaderboard  
 
-   ```bash
-   npx expo start
-   ```
+### 📊 Analytics  
+- Interactive charts (react-native-chart-kit)  
+- Portfolio breakdown by sector & value  
 
-In the output, you'll find options to open the app in a
+### 💎 UI/UX  
+- Glassmorphism design  
+- Haptic feedback for interactions  
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🏗️ Architecture
 
-## Get a fresh project
+- **Backend (Engine):** Node.js + Express (business logic, JWT auth, DB updates)  
+- **Database:** MongoDB with Mongoose  
+- **Realtime Layer:** Socket.io for live price streaming  
+- **Frontend (Client):** React Native (Expo), optimized rendering  
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
-```
+## 🛠️ Tech Stack
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **Frontend:** React Native, Expo, Expo Router  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB, Mongoose  
+- **Realtime:** Socket.io  
+- **Auth:** JWT, Bcrypt  
+- **Charts:** React Native Chart Kit  
