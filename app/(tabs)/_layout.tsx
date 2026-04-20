@@ -1,33 +1,55 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { Tabs } from "expo-router";
+import { LineChart, Briefcase, History, Trophy, LayoutGrid } from "lucide-react-native";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+        headerShown: true,
+        headerStyle: { backgroundColor: "#0d0d0d", borderBottomWidth: 0 },
+        headerTintColor: "#fff",
+        tabBarStyle: {
+          backgroundColor: "#1a1a1a",
+          borderTopWidth: 0,
+          elevation: 0,
+        },
+        tabBarActiveTintColor: "#00ff88",
+        tabBarInactiveTintColor: "#888",
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="dashboard"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Market",
+          tabBarIcon: ({ color, size }) => <LineChart color={color} size={size} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="industries"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: "Sectors",
+          tabBarIcon: ({ color, size }) => <LayoutGrid color={color} size={size} />,
+        }}
+      />
+      <Tabs.Screen
+        name="portfolio"
+        options={{
+          title: "Portfolio",
+          tabBarIcon: ({ color, size }) => <Briefcase color={color} size={size} />,
+        }}
+      />
+      <Tabs.Screen
+        name="history"
+        options={{
+          title: "History",
+          tabBarIcon: ({ color, size }) => <History color={color} size={size} />,
+        }}
+      />
+      <Tabs.Screen
+        name="leaderboard"
+        options={{
+          title: "Rankings",
+          tabBarIcon: ({ color, size }) => <Trophy color={color} size={size} />,
         }}
       />
     </Tabs>
