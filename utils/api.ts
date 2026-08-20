@@ -6,7 +6,7 @@ import { router } from "expo-router";
 // Add `/api` since the backend routes are mounted there.
 export const API_URL = process.env.EXPO_PUBLIC_API_URL 
   ? `${process.env.EXPO_PUBLIC_API_URL}/api` 
-  : "http://192.168.1.11:5000/api";
+  : "http://192.168.29.132:5000/api";
 
 const api = axios.create({
   baseURL: API_URL,
@@ -37,8 +37,10 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
-    // If the server explicitly rejects the auth token
-    if (error.response && error.response.status === 401) {
+    const isAuthRoute = error.config && error.config.url && (error.config.url.includes('/auth/login') || error.config.url.includes('/auth/register'));
+    
+    // If the server explicitly rejects the auth token (and it's not a login/register request)
+    if (error.response && error.response.status === 401 && !isAuthRoute) {
       console.warn("Session Expired or Invalid Token. Forcing logout.");
       
       // Wipe the stored identity natively
