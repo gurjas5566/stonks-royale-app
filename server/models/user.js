@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
   cash: {
     type: Number,
     required: true,
-    default: 10000,
+    default: 1000,
   },
   xp: {
     type: Number,
